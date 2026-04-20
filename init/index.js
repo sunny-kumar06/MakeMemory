@@ -1,23 +1,21 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
-const initData = require("./data.js");
 const Listing = require("../models/listing.js");
-
-
-main()
-.then(() => console.log("Connected to MongoDB"))
-.catch(err => console.log(err));
+const initData = require("./data.js");
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/test');
-
-  // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
+  await mongoose.connect(process.env.MONGO_URL);
+  console.log("Connected to MongoDB");
 }
 
-const initDB = async () => {
-   await Listing.deleteMany({});
-   await Listing.insertMany(initData.data);
-   console.log("data was successfull");
+main().catch((err) => console.log(err));
 
+const initDB = async () => {
+  await Listing.deleteMany({});
+  await Listing.insertMany(initData.data);
+  console.log("Database seeded successfully 🌱");
+  mongoose.connection.close();
 };
 
 initDB();
