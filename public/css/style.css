@@ -195,3 +195,32 @@ body {
         width: 100%;
     }
 }
+
+/* ===== NAVBAR BALANCE FIX ===== */
+.navbar .container {
+    max-width: 1200px;
+}
+
+/* SEARCH WIDTH CONTROL */
+.form-control {
+    border-radius: 25px;
+}
+
+/* BUTTON ROUND */
+.btn-outline-danger {
+    border-radius: 25px;
+}
+
+/* FIX CARD GRID ISSUE */
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.col {
+    display: flex;
+}
+
+.listing-card {
+    width: 100%;
+}
