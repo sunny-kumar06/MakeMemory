@@ -186,3 +186,18 @@
     padding: 6px 12px;
     cursor: pointer;
 }
+
+/* MOBILE NAVBAR FIX */
+.navbar-collapse {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* spacing mobile */
+@media (max-width: 768px) {
+    .navbar-nav {
+        gap: 10px;
+        text-align: center;
+    }
+}
