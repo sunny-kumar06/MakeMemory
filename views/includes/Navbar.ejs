@@ -1,32 +1,38 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white border-bottom sticky-top shadow-sm">
-  <div class="container">
+<nav class="navbar navbar-expand-md navbar-light bg-white sticky-top shadow-sm">
+  <div class="container d-flex align-items-center justify-content-between">
 
     <!-- LOGO -->
     <a class="navbar-brand" href="/">
       <i class="fa-regular fa-compass"></i>
     </a>
 
+    <!-- SEARCH (CENTER) -->
+    <form class="search-bar mx-auto d-none d-md-flex" action="/listings" method="GET">
+      <input class="search-input" type="search" name="search" placeholder="Search destinations...">
+      <button class="search-btn" type="submit">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </form>
+
     <!-- TOGGLE -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- MENU -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-
-      <!-- SEARCH -->
-      <form class="d-flex me-3" action="/listings" method="GET">
-        <input class="form-control me-2" type="search" name="search" placeholder="Search...">
-        <button class="btn btn-outline-danger" type="submit">Search</button>
-      </form>
-
-      <!-- LINKS -->
+    <!-- LINKS -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       <div class="navbar-nav">
         <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/listings">All Listing</a>
-        <a class="nav-link" href="/listings/new">Add new Listing</a>
+        <a class="nav-link" href="/listings/new">Add Listing</a>
       </div>
 
+      <!-- MOBILE SEARCH -->
+      <form class="search-bar mt-2 d-md-none" action="/listings" method="GET">
+        <input class="search-input" type="search" name="search" placeholder="Search...">
+        <button class="search-btn" type="submit">Go</button>
+      </form>
     </div>
+
   </div>
 </nav>
